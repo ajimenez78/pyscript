@@ -1,6 +1,6 @@
 div#loading {
-    width: 35px;
-    height: 35px;
+    width: 128px;
+    height: 128px;
     display: none;
     background: url(/static/spinner.gif) no-repeat;
     cursor: wait;
