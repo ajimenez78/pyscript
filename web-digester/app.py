@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request
+from flask import Flask, render_template, request
 import requests
 from dotenv import load_dotenv
 from markupsafe import escape
@@ -56,12 +56,11 @@ def summarize(url):
     )
     return response.choices[0].message.content
 
-@app.route("/")
-def hello_world():
-    return "<p>Hello, World!</p>"
-
-@app.route("/digest")
+@app.route("/", methods=['GET', 'POST'])
 def digest():
-    url = request.args.get('url', '')
-    summary = summarize(url)
-    return markdown.markdown(summary)
+    if request.method == 'POST':
+        url = request.form['url']
+        summary = summarize(url)
+        return markdown.markdown(summary)
+    else:
+        return render_template('index.html')
