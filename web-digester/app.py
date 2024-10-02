@@ -2,7 +2,6 @@ import os
 from flask import Flask, render_template, request
 import requests
 from dotenv import load_dotenv
-from markupsafe import escape
 from bs4 import BeautifulSoup
 import markdown
 from openai import OpenAI
