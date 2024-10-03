@@ -60,7 +60,7 @@ def digest():
     if request.method == 'POST':
         url = request.form['url']
         summary = summarize(url)
-        return markdown.markdown(summary)
+        return markdown.markdown(summary) + '<a href="/">Back</a>'
     else:
         return render_template('index.html')
 
