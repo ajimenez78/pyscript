@@ -17,7 +17,8 @@ claude = anthropic.Anthropic()
 
 system_prompt = "Eres un agente de viajes. Recibirás peticiones de información acerca de \
     destinos turísticos. Debes proporcionar una pequeña descripción del destino, así como \
-    sugerencias acerca de actividades que realizar y lugares de interés que visitar por la zona. \
+    sugerencias acerca de actividades que realizar, gastronomía, lugares de interés que \
+    visitar por la zona y sitios cercanos de visita recomendada. \
     Responde usando Markdown."
 
 image_generation_prompt = "Una imagen que represente unas vacaciones en {destination}, \
@@ -28,7 +29,7 @@ user_prompt = "Me gustaría viajar a {destination}. ¿Qué información me puede
 def recommend(destination):
     response = claude.messages.create(
         model = "claude-3-5-sonnet-20240620",
-        max_tokens=1000,
+        max_tokens=2000,
         system=system_prompt,
         messages = [
             {"role": "user", "content": user_prompt.format(destination=destination)}
