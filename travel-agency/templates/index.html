@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width,initial-scale=1" />
+      <title>Agencia TravelIA</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+      <script
+        src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"></script>
+      <script type="text/javascript">// <![CDATA[
+        function loading(){
+            $("#loading").show();
+            $("#content").hide();       
+        }
+      // ]]></script>
+  </head>
+  <body>
+    <div id="loading"></div>
+    <div id="content">
+      <h1>TravelIA</h1>
+      <p>
+        <form method="post">
+          <input type="text" name="destination" placeholder="Escribe el nombre del destino que te gustaría visitar">
+          <input type="submit" value="¡Dame información!" onclick="loading();">
+        </form>
+      </p>
+    </div>
+  </body>
+</html>

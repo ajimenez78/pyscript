@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width,initial-scale=1" />
+      <title>Agencia TravelIA</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body>
+    <div id="content">
+      <h1>TravelIA</h1>
+      <h2>{{ destination }}</h2>
+        <div class="recommendation">
+            <div>
+                <img src="{{ destination_image }}" />
+            </div>
+            <p>
+                {{ destination_description }}
+            </p>
+        </div>
+        <a href="/">Back</a>
+    </div>
+  </body>
+</html>

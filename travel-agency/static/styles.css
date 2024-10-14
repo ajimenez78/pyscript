@@ -1,0 +1,14 @@
+div#loading {
+    width: 128px;
+    height: 128px;
+    display: none;
+    background: url(/static/spinner.gif) no-repeat;
+    cursor: wait;
+}
+
+img {
+    float: none;
+    margin: 5px;
+    height: 512px;
+    width: 896px;
+}
